@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             when {
-                branch 'master'
+                branch 'masterx'
             }
             steps {
                 script {
@@ -44,7 +44,9 @@ pipeline {
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
-                //implement Kubernetes deployment here
+                  kubeconfigId: 'kube-master-secret',
+                  configs: 'k8s.yml',
+                  enableConfigSubstitution: true
             }
         }
     }
