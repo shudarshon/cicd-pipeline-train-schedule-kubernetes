@@ -46,7 +46,7 @@ pipeline {
                 milestone(1)
                 kubernetesDeploy(
                   kubeconfigId: 'kube-master-secret',
-                  configs: 'k8s.yaml',
+                  configs: 'k8s.yml',
                   enableConfigSubstitution: true
                )
             }
