@@ -46,7 +46,7 @@ pipeline {
                 milestone(1)
                 kubernetesDeploy(
                   kubeconfigId: 'kube-master-secret',
-                  configs: 'train-schedule-kube.yml.yml',
+                  configs: 'train-schedule-kube.yml',
                   enableConfigSubstitution: true
                )
             }
